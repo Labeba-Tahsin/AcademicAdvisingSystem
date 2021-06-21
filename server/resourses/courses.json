@@ -1,0 +1,861 @@
+[
+    {
+        "id": "EE 105",
+        "name": "Introduction to Electrical Engineering",
+        "prequisites": [
+            "PHY 105",
+            "MATH 103"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "ELECTRICAL",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "EE 106",
+        "name": "Intro to Electrical Engineering Laboratory",
+        "prequisites": [
+            "EE 105"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "ELECTRICAL",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "EE 217",
+        "name": "Electronic Devices and Circuits",
+        "prerequisites": [
+            "EE 105"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "ELECTRICAL",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "EE 218",
+        "name": "Electronic Devices and Circuits Laboratory",
+        "prequisites": [
+            "EE 217"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "ELECTRICAL",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "ENG 101",
+        "name": "English Reading and Composition",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "LANGUAGE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "ENG 213",
+        "name": "Advanced English Communication",
+        "prequisites": [
+            "ENG 101"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "LANGUAGE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "ECO 101",
+        "name": "Introduction to Economics",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "GENERAL",
+        "type": "ANY_FOUR"
+    },
+    {
+        "id": "SOC 101",
+        "name": "Sociology",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "GENERAL",
+        "type": "ANY_FOUR"
+    },
+    {
+        "id": "HIS 101",
+        "name": "Bangladesh studies",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "GENERAL",
+        "type": "ANY_FOUR"
+    },
+    {
+        "id": "ACT 101",
+        "name": "Principles of Accounting",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "GENERAL",
+        "type": "ANY_FOUR"
+    },
+    {
+        "id": "PHI 301",
+        "name": "Engineering Ethics",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "GENERAL",
+        "type": "ANY_FOUR"
+    },
+    {
+        "id": "PHY 105",
+        "name": "Physics",
+        "prequisites": "",
+        "corequisite": "PHY 106",
+        "credit": 3,
+        "group": "SCIENCE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "PHY 106",
+        "name": "Physics Laboratory",
+        "prequisites": [
+            "PHY 105"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "SCIENCE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CHEM 101",
+        "name": "Chemistry",
+        "prequisites": "",
+        "corequisite": "CHEM 102",
+        "credit": 3,
+        "group": "SCIENCE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CHEM 102",
+        "name": "Chemistry Laboratory",
+        "prequisites": [
+            "CHEM 101"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "SCIENCE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "MATH 101",
+        "name": "Calculus",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "MATH",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "MATH 103",
+        "name": "Differential Equations",
+        "prequisites": [
+            "MATH 101"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "MATH",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "MATH 105",
+        "name": "Coordinate Geometry and Vector",
+        "prequisites": [
+            "MATH 101",
+            "MATH 103"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "MATH",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "MATH 201",
+        "name": "Linear Algebra",
+        "prequisites": [
+            "MATH 101",
+            "MATH 103"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "MATH",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "MATH 203",
+        "name": "Probability and Statistics",
+        "prequisites": [
+            "MATH 101"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "MATH",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CE 201",
+        "name": "Introduction to Civil Engineering",
+        "prequisites": [
+            "PHY 105"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "ENGINEERING",
+        "type": "ANY_ONE"
+    },
+    {
+        "id": "ME201",
+        "name": "Fundamentals of Mechanical Engineering",
+        "prequisites": [
+            "PHY 105"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "ENGINEERING",
+        "type": "ANY_ONE"
+    },
+    {
+        "id": "IPE 301",
+        "name": "Industrial Management",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "ENGINEERING",
+        "type": "ANY_ONE"
+    },
+    {
+        "id": "CSE 101",
+        "name": "Computer Fundamentals",
+        "prequisites": "",
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 103",
+        "name": "Discrete Mathematics",
+        "prequisites": [
+            "CSE 101",
+            "MATH 101"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 105",
+        "name": "Structured Programming",
+        "prequisites": [
+            "CSE 101"
+        ],
+        "corequisite": "CSE 106",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 106",
+        "name": "Structured Programming Laboratory",
+        "prequisites": [
+            "CSE 105"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 201",
+        "name": "Data Structures",
+        "prequisites": [
+            "CSE 105"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 203",
+        "name": "Introduction to Algorithms",
+        "prequisites": [
+            "CSE 201"
+        ],
+        "corequisite": "CSE 204",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 204",
+        "name": "Data Structures and Algorithms Laboratory",
+        "prequisites": [
+            "CSE 203"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 205",
+        "name": "Object Oriented Programming",
+        "prequisites": [
+            "CSE 105"
+        ],
+        "corequisite": "CSE 206",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 206",
+        "name": "Object Oriented Programming Laboratory",
+        "prequisites": [
+            "CSE 205"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 207",
+        "name": "Digital Logic Design",
+        "prequisites": [
+            "CSE 101, EE 105"
+        ],
+        "corequisite": "CSE 208",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 208",
+        "name": "Digital Logic Design Laboratory",
+        "prequisites": [
+            "CSE 207"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 301",
+        "name": "Microprocessors and Microcontrollers",
+        "prequisites": [
+            "CSE207"
+        ],
+        "corequisite": "CSE 302",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 302",
+        "name": "Microprocessors and Microcontrollers Laboratory",
+        "prequisites": [
+            "CSE 301"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 303",
+        "name": "Database Management Systems",
+        "prequisites": [
+            "CSE 201"
+        ],
+        "corequisite": "CSE 304",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 304",
+        "name": "Database Management Systems Laboratory",
+        "prequisites": [
+            "CSE 303"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 305",
+        "name": "Data Communication",
+        "prequisites": [
+            "CSE207, EE 217"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 307",
+        "name": "Computer Architecture",
+        "prequisites": [
+            "CSE 301"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 309",
+        "name": "Numerical Methods",
+        "prequisites": [
+            "CSE 105",
+            "MATH 103",
+            "MAT 105",
+            "MAT 201"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 311",
+        "name": "Operating Systems",
+        "prequisites": [
+            "CSE 105",
+            "CSE 203"
+        ],
+        "corequisite": "CSE 312",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 312",
+        "name": "Operating Systems Laboratory",
+        "prequisites": [
+            "CSE 311"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 313",
+        "name": "Computer Networks",
+        "prequisites": [
+            "CSE 305"
+        ],
+        "corequisite": "CSE 314",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 314",
+        "name": "Computer Networks Laboratory",
+        "prequisites": [
+            "CSE 313"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 315",
+        "name": "Theory of Automata and Formal Languages",
+        "prequisites": [
+            "CSE 103",
+            "CSE 105"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 320",
+        "name": "Assembly Language Programming Laboratory",
+        "prequisites": [
+            "CSE 301"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 401",
+        "name": "Software Engineering",
+        "prequisites": [
+            "CSE 105",
+            "CSE 203",
+            "CSE 205",
+            "CSE 303"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 403",
+        "name": "Internet and Web Technologies",
+        "prequisites": [
+            "CSE 313"
+        ],
+        "corequisite": "CSE 404",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 404",
+        "name": "Internet and Web Technologies laboratory",
+        "prequisites": [
+            "CSE 403"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 405",
+        "name": "Artificial Intelligence and Expert Systems",
+        "prequisites": [
+            "CSE 103",
+            "CSE 205",
+            "CSE 203",
+            "CSE 315"
+        ],
+        "corequisite": "CSE 406",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 406",
+        "name": "Artificial Intelligence and Expert Systems Laboratory",
+        "prequisites": [
+            "CSE 405"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 407",
+        "name": "Compiler Design",
+        "prequisites": [
+            "CSE315"
+        ],
+        "corequisite": "CSE 408",
+        "credit": 3,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 408",
+        "name": "Compiler Design Laboratory",
+        "prequisites": [
+            "CSE 407"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "CSE",
+        "type": "REQUIRED"
+    },
+    {
+        "id": "CSE 417",
+        "name": "Computer Graphics",
+        "prequisites": [
+            "MATH 105",
+            "MATH 201",
+            "CSE 203",
+            "CSE 105"
+        ],
+        "corequisite": "CSE 418",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 418",
+        "name": "Computer Graphics Laboratory",
+        "prequisites": [
+            "CSE 417"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 419",
+        "name": "Simulation and Modeling",
+        "prequisites": [
+            "CSE 103",
+            "CSE 205",
+            "CSE 309"
+        ],
+        "corequisite": "CSE 420",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 420",
+        "name": "Simulation and Modeling Laboratory",
+        "prequisites": [
+            "CSE 419"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 421",
+        "name": "Multimedia Systems Design",
+        "prequisites": [
+            "CSE 305",
+            "CSE 311"
+        ],
+        "corequisite": "CSE 422",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 422",
+        "name": "Multimedia Systems Design Laboratory",
+        "prequisites": [
+            "CSE 421"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 423",
+        "name": "Digital Image Processing",
+        "prequisites": [
+            "CSE 103",
+            "CSE 203",
+            "MATH 105",
+            "MATH 201"
+        ],
+        "corequisite": "CSE 424",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 424",
+        "name": "Digital Image Processing Laboratory",
+        "prequisites": [
+            "CSE 423"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 425",
+        "name": "Pattern Recognition",
+        "prequisites": [
+            "CSE 103",
+            "CSE 315",
+            "MATH 105",
+            "MATH 201"
+        ],
+        "corequisite": "CSE 426",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 426",
+        "name": "Pattern Recognition Laboratory",
+        "prequisites": [
+            "CSE 425"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 427",
+        "name": "Real Time Computer Systems",
+        "prequisites": [
+            "CSE 305",
+            "CSE 307",
+            "CSE 311"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 429",
+        "name": "Management Information Systems",
+        "prequisites": [
+            "CSE 303",
+            "CSE 305"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 431",
+        "name": "Fuzzy Systems and Neural Networks",
+        "prequisites": [
+            "CSE 309",
+            "CSE 313",
+            "CSE 315"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "SOFTWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 439",
+        "name": "Embedded Systems",
+        "prequisites": [
+            "CSE 307",
+            "EE 217"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "HARDWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 441",
+        "name": "Introduction to VLSI Systems",
+        "prequisites": [
+            "CSE 301"
+        ],
+        "corequisite": "CSE 442",
+        "credit": 3,
+        "group": "HARDWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "CSE 442",
+        "name": "VLSI Systems Laboratory",
+        "prequisites": [
+            "CSE 441"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "HARDWARE",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "EE 425",
+        "name": "Optical Fiber Communication",
+        "prequisites": [
+            "EE 217",
+            "EE 218",
+            "CSE 305"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "NETWORK",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "EE 427",
+        "name": "Cellular Mobile Communications",
+        "prequisites": [
+            "EE 217",
+            "EE 218",
+            "CSE 305"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "NETWORK",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "EE 429",
+        "name": "Microwave Engineering",
+        "prequisites": [
+            "EE 217",
+            "EE 218",
+            "CSE 305"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "NETWORK",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "EE 430",
+        "name": "Microwave Engineering Laboratory",
+        "prequisites": [
+            "EE 217",
+            "EE 218",
+            "CSE 305"
+        ],
+        "corequisite": "",
+        "credit": 1,
+        "group": "NETWORK",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "EE 453",
+        "name": "Satellite Communications",
+        "prequisites": [
+            "EE 217",
+            "EE 218",
+            "CSE 305"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "NETWORK",
+        "type": "ELECTIVE"
+    },
+    {
+        "id": "EE 455",
+        "name": "Wireless Communications",
+        "prequisites": [
+            "EE 217",
+            "EE 218",
+            "CSE 305"
+        ],
+        "corequisite": "",
+        "credit": 3,
+        "group": "NETWORK",
+        "type": "ELECTIVE"
+    }
+]
