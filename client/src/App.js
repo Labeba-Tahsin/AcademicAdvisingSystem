@@ -10,6 +10,10 @@ import { Provider } from 'react-redux'
 import { connect } from 'react-redux';
 import Signup from './components/Signup';
 import './App.css';
+import SetProfile from './components/SetProfile';
+import UserManagement from './components/UserManagement';
+import StudentDashboard from './components/StudentDashboard';
+import Result from './components/Result';
 
 
 function App(props) {
@@ -18,8 +22,12 @@ function App(props) {
     <Router>
       <div>
         <PrivateRoute path="/profile" component={Profile} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/user-management" component={UserManagement} isAuthenticated={props.isAuthenticated} />
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={Signup} exact />
+        <Route path="/set-profile" component={SetProfile} exact />
+        <Route path="/student-dashboard" component={StudentDashboard} exact />
+        <Route path="/result/:id" component={Result} />
         <Route path="/" component={Login} exact />
       </div>
     </Router>

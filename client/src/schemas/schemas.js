@@ -3,7 +3,8 @@ import XRegExp from 'xregexp';
 
 export const SignupSchema = object().shape({
     email: string()
-        .email('This field should be a valid email address.'),
+        .email('This field should be a valid email address.')
+        .required('This field must not be empty'),
     // .matches(/^.{1,64}@/, 'The part before @ of the email can be maximum 64 characters.')
     // .matches(/^.*[a-z]+.*@/, 'This field should be a valid email address.'),
     role: string()
@@ -17,9 +18,24 @@ export const SignupSchema = object().shape({
         .oneOf([ref('password'), null], 'Passwords must match'),
 });
 
+export const ProfileSchema = object().shape({
+    id: string()
+        .required('This field must not be empty'),
+    name: string()
+        .required('This field must not be empty'),
+    role: string()
+        .required('This field must not be empty'),
+    cgpa: string()
+        .required('This field must not be empty'),
+    credit: string()
+        .required('This field must not be empty'),
+    dept: string()
+        .required('This field must not be empty')
+});
+
 export const LoginSchema = object().shape({
-    email: string()
-        .email('This field should be a valid email address.'),
+    username: string()
+        .required('This field must not be empty'),
     // .matches(/^.{1,64}@/, 'The part before @ of the email can be maximum 64 characters.')
     // .matches(/^.*[a-z]+.*@/, 'This field should be a valid email address.'),
     password: string()

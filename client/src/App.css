@@ -18,6 +18,10 @@
   height: 100vh;
   padding-top: 50px;
 }
+.bg-card{
+  background: #19aa8d;
+  color:#fff;
+}
 
 .signup-form {
   color: #999;
@@ -29,9 +33,18 @@
 }
 
 .form-control{
-  margin-bottom: 20px;
+  margin-bottom: .5rem!important;
 }
 
 .invalid-feedback{
   display: block !important;
+}
+
+.profile-form{
+  max-width: 700px;
+  padding-top: 40px;;
+}
+
+.signup-form .btn{
+  margin-top: 10px;
 }

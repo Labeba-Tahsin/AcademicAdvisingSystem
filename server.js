@@ -1,21 +1,30 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require("mongoose");
 
 const app = express();
+const routes = require("./server/routes") // new
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use("/", routes);
 
-app.get('/api/hello', (req, res) => {
-    res.send({ express: 'Hello From Express' });
-});
+mongoose.connect('', {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+})
+    .then(() => {
+        console.log('Connected to database ');
 
-app.post('/api/world', (req, res) => {
-    console.log(req.body);
-    res.send(
-        `I received your POST request. This is what you sent me: ${req.body.post}`,
-    );
-});
+    })
+    .catch((err) => {
+        console.error(`Error connecting to the database. \n${err}`);
+    });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(5000, () => {
+    console.log(`Server has started in ${port}`)
+})
+

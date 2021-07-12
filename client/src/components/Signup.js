@@ -2,10 +2,13 @@ import React from 'react'
 import { useHistory } from "react-router-dom";
 import { SignupSchema } from '../schemas/schemas';
 import { Form, Formik, Field, ErrorMessage, FieldArray } from "formik";
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
     return (
-        <div className="container bg-green">
+        <div className="container-fluid bg-green">
             <div className="row">
                 <div className="col-md-12">
                     <div className="signup-form">
@@ -15,8 +18,29 @@ const Signup = () => {
                             initialValues={{ email: '', role: '', password: '', confirmPassword: '' }}
                             validationSchema={SignupSchema}
                             onSubmit={(values, actions) => {
-                                console.log('hi');
-                                actions.setSubmitting(false);
+                                axios.post('/api/users', values)
+                                    .then((x) => {
+                                        toast.success(x.data.message, {
+                                            position: "top-right",
+                                            autoClose: 5000,
+                                            hideProgressBar: false
+                                        });
+                                        actions.resetForm();
+
+
+                                    })
+                                    .catch((err) => {
+                                        toast.error(err.response.data, {
+                                            position: "top-right",
+                                            autoClose: 5000,
+                                            hideProgressBar: false
+                                        });
+
+                                    })
+                                    .finally(() => {
+                                        actions.setSubmitting(false);
+                                    });
+
                             }}
                         >
                             {props => (
@@ -54,6 +78,7 @@ const Signup = () => {
                                 </Form>
                             )}
                         </Formik>
+                        <ToastContainer />
                     </div>
                 </div>
             </div>
