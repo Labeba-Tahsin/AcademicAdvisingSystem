@@ -63,6 +63,28 @@ router.get("/api/courses", async (req, res) => {
 
 });
 
+router.get("/api/eligible-courses/:id", async (req, res) => {
+    try {
+        const courses = await Course.find();
+        const id = req.params.id;
+        const student = await Student.findOne({ id: id });
+        const result = student.result.map(x => x.id);
+
+        const eleg = [];
+
+        courses.forEach((elem, ind) => {
+            if (elem.seat < 30 && elem.prequisites.every(i => result.includes(i)) || elem.prequisites.length === 0 || result.includes(elem.id)) {
+                eleg.push(elem);
+            }
+        });
+
+        res.json(eleg);
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+
+});
+
 router.post("/api/courses", async (req, res) => {
     const rawdata = fs.readFileSync(__dirname + '/resourses/courses.json');
     const courses = JSON.parse(rawdata);

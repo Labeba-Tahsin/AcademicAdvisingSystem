@@ -26,7 +26,7 @@ function App(props) {
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={Signup} exact />
         <Route path="/set-profile" component={SetProfile} exact />
-        <Route path="/student-dashboard" component={StudentDashboard} exact />
+        <Route path="/student-dashboard/:id" component={StudentDashboard} exact />
         <Route path="/result/:id" component={Result} />
         <Route path="/" component={Login} exact />
       </div>

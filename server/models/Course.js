@@ -7,7 +7,8 @@ const schema = mongoose.Schema({
     corequisite: String,
     credit: String,
     group: String,
-    type: String
+    type: String,
+    seat: Number
 })
 
 module.exports = mongoose.model("Courses", schema)

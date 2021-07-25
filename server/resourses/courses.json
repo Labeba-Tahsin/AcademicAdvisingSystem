@@ -1,5 +1,6 @@
 [
     {
+        "seat": 30,
         "id": "EE 105",
         "name": "Introduction to Electrical Engineering",
         "prequisites": [
@@ -12,6 +13,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "EE 106",
         "name": "Intro to Electrical Engineering Laboratory",
         "prequisites": [
@@ -23,6 +25,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "EE 217",
         "name": "Electronic Devices and Circuits",
         "prerequisites": [
@@ -34,6 +37,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "EE 218",
         "name": "Electronic Devices and Circuits Laboratory",
         "prequisites": [
@@ -45,15 +49,17 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "ENG 101",
         "name": "English Reading and Composition",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "LANGUAGE",
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "ENG 213",
         "name": "Advanced English Communication",
         "prequisites": [
@@ -65,60 +71,67 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "ECO 101",
         "name": "Introduction to Economics",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "GENERAL",
         "type": "ANY_FOUR"
     },
     {
+        "seat": 30,
         "id": "SOC 101",
         "name": "Sociology",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "GENERAL",
         "type": "ANY_FOUR"
     },
     {
+        "seat": 30,
         "id": "HIS 101",
         "name": "Bangladesh studies",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "GENERAL",
         "type": "ANY_FOUR"
     },
     {
+        "seat": 30,
         "id": "ACT 101",
         "name": "Principles of Accounting",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "GENERAL",
         "type": "ANY_FOUR"
     },
     {
+        "seat": 30,
         "id": "PHI 301",
         "name": "Engineering Ethics",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "GENERAL",
         "type": "ANY_FOUR"
     },
     {
+        "seat": 30,
         "id": "PHY 105",
         "name": "Physics",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "PHY 106",
         "credit": 3,
         "group": "SCIENCE",
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "PHY 106",
         "name": "Physics Laboratory",
         "prequisites": [
@@ -130,15 +143,17 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CHEM 101",
         "name": "Chemistry",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "CHEM 102",
         "credit": 3,
         "group": "SCIENCE",
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CHEM 102",
         "name": "Chemistry Laboratory",
         "prequisites": [
@@ -150,15 +165,17 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "MATH 101",
         "name": "Calculus",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "MATH",
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "MATH 103",
         "name": "Differential Equations",
         "prequisites": [
@@ -170,6 +187,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "MATH 105",
         "name": "Coordinate Geometry and Vector",
         "prequisites": [
@@ -182,6 +200,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "MATH 201",
         "name": "Linear Algebra",
         "prequisites": [
@@ -194,6 +213,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "MATH 203",
         "name": "Probability and Statistics",
         "prequisites": [
@@ -205,6 +225,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CE 201",
         "name": "Introduction to Civil Engineering",
         "prequisites": [
@@ -216,6 +237,7 @@
         "type": "ANY_ONE"
     },
     {
+        "seat": 30,
         "id": "ME201",
         "name": "Fundamentals of Mechanical Engineering",
         "prequisites": [
@@ -227,24 +249,27 @@
         "type": "ANY_ONE"
     },
     {
+        "seat": 30,
         "id": "IPE 301",
         "name": "Industrial Management",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "ENGINEERING",
         "type": "ANY_ONE"
     },
     {
+        "seat": 30,
         "id": "CSE 101",
         "name": "Computer Fundamentals",
-        "prequisites": "",
+        "prequisites": [],
         "corequisite": "",
         "credit": 3,
         "group": "CSE",
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 103",
         "name": "Discrete Mathematics",
         "prequisites": [
@@ -257,6 +282,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 105",
         "name": "Structured Programming",
         "prequisites": [
@@ -268,6 +294,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 106",
         "name": "Structured Programming Laboratory",
         "prequisites": [
@@ -279,6 +306,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 201",
         "name": "Data Structures",
         "prequisites": [
@@ -290,6 +318,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 203",
         "name": "Introduction to Algorithms",
         "prequisites": [
@@ -301,6 +330,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 204",
         "name": "Data Structures and Algorithms Laboratory",
         "prequisites": [
@@ -312,6 +342,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 205",
         "name": "Object Oriented Programming",
         "prequisites": [
@@ -323,6 +354,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 206",
         "name": "Object Oriented Programming Laboratory",
         "prequisites": [
@@ -334,6 +366,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 207",
         "name": "Digital Logic Design",
         "prequisites": [
@@ -345,6 +378,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 208",
         "name": "Digital Logic Design Laboratory",
         "prequisites": [
@@ -356,6 +390,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 301",
         "name": "Microprocessors and Microcontrollers",
         "prequisites": [
@@ -367,6 +402,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 302",
         "name": "Microprocessors and Microcontrollers Laboratory",
         "prequisites": [
@@ -378,6 +414,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 303",
         "name": "Database Management Systems",
         "prequisites": [
@@ -389,6 +426,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 304",
         "name": "Database Management Systems Laboratory",
         "prequisites": [
@@ -400,6 +438,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 305",
         "name": "Data Communication",
         "prequisites": [
@@ -411,6 +450,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 307",
         "name": "Computer Architecture",
         "prequisites": [
@@ -422,6 +462,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 309",
         "name": "Numerical Methods",
         "prequisites": [
@@ -436,6 +477,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 311",
         "name": "Operating Systems",
         "prequisites": [
@@ -448,6 +490,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 312",
         "name": "Operating Systems Laboratory",
         "prequisites": [
@@ -459,6 +502,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 313",
         "name": "Computer Networks",
         "prequisites": [
@@ -470,6 +514,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 314",
         "name": "Computer Networks Laboratory",
         "prequisites": [
@@ -481,6 +526,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 315",
         "name": "Theory of Automata and Formal Languages",
         "prequisites": [
@@ -493,6 +539,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 320",
         "name": "Assembly Language Programming Laboratory",
         "prequisites": [
@@ -504,6 +551,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 401",
         "name": "Software Engineering",
         "prequisites": [
@@ -518,6 +566,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 403",
         "name": "Internet and Web Technologies",
         "prequisites": [
@@ -529,6 +578,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 404",
         "name": "Internet and Web Technologies laboratory",
         "prequisites": [
@@ -540,6 +590,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 405",
         "name": "Artificial Intelligence and Expert Systems",
         "prequisites": [
@@ -554,6 +605,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 406",
         "name": "Artificial Intelligence and Expert Systems Laboratory",
         "prequisites": [
@@ -565,6 +617,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 407",
         "name": "Compiler Design",
         "prequisites": [
@@ -576,6 +629,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 408",
         "name": "Compiler Design Laboratory",
         "prequisites": [
@@ -587,6 +641,7 @@
         "type": "REQUIRED"
     },
     {
+        "seat": 30,
         "id": "CSE 417",
         "name": "Computer Graphics",
         "prequisites": [
@@ -601,6 +656,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 418",
         "name": "Computer Graphics Laboratory",
         "prequisites": [
@@ -612,6 +668,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 419",
         "name": "Simulation and Modeling",
         "prequisites": [
@@ -625,6 +682,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 420",
         "name": "Simulation and Modeling Laboratory",
         "prequisites": [
@@ -636,6 +694,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 421",
         "name": "Multimedia Systems Design",
         "prequisites": [
@@ -648,6 +707,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 422",
         "name": "Multimedia Systems Design Laboratory",
         "prequisites": [
@@ -659,6 +719,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 423",
         "name": "Digital Image Processing",
         "prequisites": [
@@ -673,6 +734,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 424",
         "name": "Digital Image Processing Laboratory",
         "prequisites": [
@@ -684,6 +746,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 425",
         "name": "Pattern Recognition",
         "prequisites": [
@@ -698,6 +761,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 426",
         "name": "Pattern Recognition Laboratory",
         "prequisites": [
@@ -709,6 +773,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 427",
         "name": "Real Time Computer Systems",
         "prequisites": [
@@ -722,6 +787,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 429",
         "name": "Management Information Systems",
         "prequisites": [
@@ -734,6 +800,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 431",
         "name": "Fuzzy Systems and Neural Networks",
         "prequisites": [
@@ -747,6 +814,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 439",
         "name": "Embedded Systems",
         "prequisites": [
@@ -759,6 +827,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 441",
         "name": "Introduction to VLSI Systems",
         "prequisites": [
@@ -770,6 +839,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "CSE 442",
         "name": "VLSI Systems Laboratory",
         "prequisites": [
@@ -781,6 +851,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "EE 425",
         "name": "Optical Fiber Communication",
         "prequisites": [
@@ -794,6 +865,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "EE 427",
         "name": "Cellular Mobile Communications",
         "prequisites": [
@@ -807,6 +879,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "EE 429",
         "name": "Microwave Engineering",
         "prequisites": [
@@ -820,6 +893,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "EE 430",
         "name": "Microwave Engineering Laboratory",
         "prequisites": [
@@ -833,6 +907,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "EE 453",
         "name": "Satellite Communications",
         "prequisites": [
@@ -846,6 +921,7 @@
         "type": "ELECTIVE"
     },
     {
+        "seat": 30,
         "id": "EE 455",
         "name": "Wireless Communications",
         "prequisites": [
