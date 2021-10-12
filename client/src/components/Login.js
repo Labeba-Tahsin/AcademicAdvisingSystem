@@ -18,7 +18,7 @@ const Login = () => {
                         <h1 className="text-dark">Log In</h1>
                         <p>Please fill in this form to login!</p>
                         <Formik
-                            initialValues={{ username: '', password: '' }}
+                            initialValues={{ email: '', password: '' }}
                             validationSchema={LoginSchema}
                             onSubmit={(values, actions) => {
                                 axios.post('/api/users/login', values)
@@ -28,23 +28,43 @@ const Login = () => {
                                             autoClose: 5000,
                                             hideProgressBar: false
                                         });
-                                        actions.resetForm();
                                         localStorage.setItem('login', 'true');
-                                        localStorage.setItem('username', values.username);
+                                        localStorage.setItem('email', values.email);
+
+
 
 
                                         if (x.data.user.role === 'admin') {
                                             history.push('/user-management');
                                         }
 
+
                                         if (x.data.user.role === 'student') {
-                                            history.push('/user-management');
-                                        }
+                                            axios.post(`/api/studentfind`, { email: values.email })
+                                                .then((y) => {
+                                                    history.push(`/result/${y.data.id}`);
+                                                    localStorage.setItem('id', y.data.id);
+                                                })
+                                                .catch((err) => {
+                                                    history.push('/set-profile');
+                                                });
+                                        };
+
+                                        if (x.data.user.role === 'faculty') {
+                                            axios.post(`/api/facultyfind`, { email: values.email })
+                                                .then((y) => {
+                                                    history.push(`/faculty-dashboard`);
+                                                    localStorage.setItem('id', y.data.id);
+                                                })
+                                                .catch((err) => {
+                                                    history.push('/set-profile');
+                                                });
+                                        };
 
 
                                     })
                                     .catch((err) => {
-                                        toast.error(err.response.data, {
+                                        toast.error("Can't login", {
                                             position: "top-right",
                                             autoClose: 5000,
                                             hideProgressBar: false
@@ -52,16 +72,17 @@ const Login = () => {
 
                                     })
                                     .finally(() => {
+                                        actions.resetForm();
                                         actions.setSubmitting(false);
                                     });
                             }}
                         >
                             {props => (
                                 <Form onSubmit={props.handleSubmit}>
-                                    <Field type="text" className="form-control" name="username" placeholder="Username" />
+                                    <Field type="text" className="form-control" name="email" placeholder="Email" />
                                     <div className="invalid-feedback">
                                         <ErrorMessage
-                                            name="username"
+                                            name="email"
                                         />
                                     </div>
                                     <Field type="password" className="form-control" name="password" placeholder="Password" />
@@ -77,6 +98,7 @@ const Login = () => {
                         </Formik>
                         <ToastContainer />
                     </div>
+                    <p className="text-white center-text"><span>Don't have an account? </span><a href="/signup" className="text-dark font-weight-bold">Sign up</a></p>
                 </div>
             </div>
         </div>

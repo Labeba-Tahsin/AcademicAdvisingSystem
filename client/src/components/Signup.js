@@ -80,6 +80,7 @@ const Signup = () => {
                         </Formik>
                         <ToastContainer />
                     </div>
+                    <p className="text-white center-text"><span>Already have an account? </span><a href="/login" className="text-dark font-weight-bold">Login</a></p>
                 </div>
             </div>
         </div>

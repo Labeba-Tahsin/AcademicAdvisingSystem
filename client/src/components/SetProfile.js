@@ -21,7 +21,7 @@ const SetProfile = () => {
                             validationSchema={ProfileSchema}
                             onSubmit={(values, actions) => {
                                 if (values.role === 'student') {
-
+                                    values.email = localStorage.getItem('email');
                                     axios.post('/api/students', values)
                                         .then((x) => {
 
@@ -34,7 +34,37 @@ const SetProfile = () => {
                                             setInterval(() => {
                                                 history.push(`/result/${values.id}`);
                                             }, 3000);
-                                            actions.resetForm();
+
+                                        })
+                                        .catch((err) => {
+                                            toast.error(err.response.data, {
+                                                position: "top-right",
+                                                autoClose: 5000,
+                                                hideProgressBar: false
+                                            });
+
+                                        })
+
+
+                                }
+
+                                console.log(values)
+
+                                if (values.role === 'faculty') {
+                                    values.email = localStorage.getItem('email');
+                                    axios.post('/api/faculty', values)
+                                        .then((x) => {
+
+                                            toast.success(x.data.message, {
+                                                position: "top-right",
+                                                autoClose: 5000,
+                                                hideProgressBar: false
+                                            });
+
+                                            setInterval(() => {
+                                                history.push(`/faculty-dashboard`);
+                                            }, 3000);
+
 
 
 
@@ -50,7 +80,7 @@ const SetProfile = () => {
 
 
                                 }
-
+                                actions.resetForm();
                                 actions.setSubmitting(false);
                             }}
                         >
@@ -104,7 +134,7 @@ const SetProfile = () => {
                 </div>
                 <ToastContainer />
             </div>
-        </div>
+        </div >
     )
 }
 

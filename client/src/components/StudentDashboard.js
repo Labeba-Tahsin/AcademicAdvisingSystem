@@ -6,13 +6,16 @@ import { Form, Formik, Field, ErrorMessage, FieldArray } from "formik";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import NavbarStudent from './NavbarStudent';
 
 export default function StudentDashboard() {
     const [courses, setCourses] = useState([]);
     const [advCrs, setAdvCrs] = useState([]);
     const [student, setStudent] = useState(null);
+    const [disable, setDisable] = useState(false);
+    const [intendCredit, setIntendCredit] = useState(0);
     const { id } = useParams();
+    const history = useHistory();
 
     const getStudentInfo = () => {
         axios.get(`/api/students/${id}`)
@@ -20,62 +23,92 @@ export default function StudentDashboard() {
                 setStudent(x.data);
             })
             .catch((err) => {
-                // toast.error(err.response.data, {
-                //     position: "top-right",
-                //     autoClose: 5000,
-                //     hideProgressBar: false
-                // });
 
             })
     }
 
     useEffect(() => {
 
-        console.log(id);
-        axios.get(`/api/eligible-courses/${id}`)
+        axios.get(`/api/advising/${id}`)
             .then((x) => {
-                setCourses(x.data);
+
+                history.push(`/advised-courses/${id}`);
             })
             .catch((err) => {
-                // toast.error(err.response.data, {
-                //     position: "top-right",
-                //     autoClose: 5000,
-                //     hideProgressBar: false
-                // });
+                axios.get(`/api/eligible-courses/${id}`)
+                    .then((x) => {
+                        setCourses(x.data);
+                    })
+                    .catch((err) => {
+
+                    });
+                if (id) getStudentInfo(id);
+
 
             });
-        if (id) getStudentInfo(id);
 
     }, []);
 
     useEffect(() => {
 
-        console.log("yes");
+        const arr = advCrs.map(x => parseInt(x.credit));
+        let creditCount = 0;
+        arr.forEach(element => {
+            creditCount = creditCount + element;
+        });
+        if ((creditCount + parseInt(intendCredit)) > 15) {
+            setDisable(true);
+        } else {
+            setDisable(false);
+        }
 
     }, [advCrs]);
 
-    // const updateCrs = (newCrs) => {
+    const doAdvising = () => {
+        const advising = {
+            student_id: student.id,
+            name: student.name,
+            courses: advCrs
+        }
+        axios.post(`/api/advising`, advising)
+            .then((x) => {
+                toast.success('Advising done successfully', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false
+                });
+                history.push(`/advised-courses/${id}`);
+            })
+            .catch((err) => {
+                toast.error(err.response.data, {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false
+                });
 
-    //     setAdvCrs(newCrs);
-    //     console.log(adv)
-    // };
+            });
+    }
 
 
 
     return (
         <div className="container">
+            <NavbarStudent />
             {student &&
                 <div className="row">
                     <div className="col-md-6">
                         <h1 className="text-dark">Advising Panel</h1>
-                        <p>Please add course for advising!</p>
+                        <p className="mb-0">Please add course for advising!</p>
+                        <p className="text-danger">You can not take more than 15 credits</p>
                         {courses && courses.length && courses.length > 0 &&
                             <Formik
                                 initialValues={{ course: '' }}
                                 // validationSchema={LoginSchema}
                                 onSubmit={(values, actions) => {
-                                    const crs = courses.find(x => x.id === values.course);
 
+
+                                    const crs = courses.find(x => x.id === values.course);
+                                    setIntendCredit(crs.credit);
                                     if (advCrs.find(x => x.id === values.course)) {
                                         toast.error("Already Added", {
                                             position: "top-right",
@@ -120,7 +153,7 @@ export default function StudentDashboard() {
 
                                         }
 
-                                        <button type="submit" className="btn btn-dark text-white">Add</button>
+                                        <button disabled={disable} type="submit" className="btn btn-dark text-white">Add</button>
                                     </Form>
                                 )}
                             </Formik>
@@ -154,14 +187,13 @@ export default function StudentDashboard() {
                                 ))
 
                                 }
-                                {student.result.length === 0 &&
+                                {advCrs.length === 0 &&
                                     <tr><td>No Course Found</td></tr>}
                             </tbody>
                         </table>
+                        <button type="button" onClick={() => doAdvising()} className="btn btn-success text-white">Finish</button>
 
-                        <div className="border border-danger p-2">
-                            <p className="text-danger">***Follow the instructions to avail submit button</p>
-                        </div>
+
                     </div>
                 </div>
             }

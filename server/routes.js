@@ -5,10 +5,13 @@ const Student = require("../server/models/Student"); // new
 const router = express.Router()
 const bcrypt = require("bcryptjs");
 const fs = require('fs');
+const async = require('async');
+const Advising = require("./models/Advising");
+const Faculty = require("./models/Faculty");
 
 router.post("/api/users/login", async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.body.username });
+        const user = await User.findOne({ email: req.body.email });
         if (!user) {
             return res.status(500).send('No user found');
         }
@@ -22,13 +25,15 @@ router.post("/api/users/login", async (req, res) => {
     } catch (error) {
         return res.status(500).send(error);
     }
-
-    res.json(user);
 });
 
 router.get("/api/users", async (req, res) => {
-    const users = await User.find();
-    res.json(users);
+    try {
+        const users = await User.find({ username: { $ne: "admin" } });
+        res.json(users);
+    } catch (error) {
+        return res.status(500).send(error);
+    }
 });
 
 router.post("/api/users", async (req, res) => {
@@ -50,7 +55,57 @@ router.post("/api/users", async (req, res) => {
         return res.status(500).send(error);
     }
 
-    res.json(user);
+});
+
+router.put(`/api/users/approve/:email`, async (req, res) => {
+    try {
+        const existingUser = await User.findOne({ email: req.params.email });
+        if (!existingUser) {
+            return res.status(400).send("This user does not exists");
+        }
+        const user = await User.findByIdAndUpdate(
+            existingUser.id,
+            { approved: true },
+            { new: true });
+
+        res.send({ message: "User Approved" });
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+
+});
+
+router.put(`/api/users/password`, async (req, res) => {
+    try {
+        const user = await User.findOne({ email: req.body.email });
+        if (!user) {
+            return res.status(400).send("This user does not exists");
+        }
+        await User.findByIdAndUpdate(
+            user.id,
+            { password: bcrypt.hashSync(req.body.password, 10) },
+            { new: true });
+
+        res.send({ message: "Password set successfully" });
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+
+});
+
+router.delete(`/api/users/delete/:email`, async (req, res) => {
+    try {
+        const existingUser = await User.findOne({ email: req.params.email });
+        if (!existingUser) {
+            return res.status(400).send("This user does not exists");
+        }
+        await User.findByIdAndDelete(existingUser.id);
+
+        res.send({ message: "User Deleted" });
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+
 });
 
 router.get("/api/courses", async (req, res) => {
@@ -132,6 +187,7 @@ router.post("/api/students", async (req, res) => {
     const student = new Student({
         id: req.body.id,
         name: req.body.name,
+        email: req.body.email,
         result: [],
         credit: req.body.credit,
         dept: req.body.dept
@@ -142,6 +198,25 @@ router.post("/api/students", async (req, res) => {
             return res.status(400).send("This student id already exists");
         }
         await student.save();
+        res.send({ message: "Successfully created!" });
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+});
+
+router.post("/api/faculty", async (req, res) => {
+    const faculty = new Faculty({
+        id: req.body.id,
+        name: req.body.name,
+        email: req.body.email,
+        dept: req.body.dept
+    });
+    try {
+        const existing = await Faculty.findOne({ id: req.body.id });
+        if (existing) {
+            return res.status(400).send("This faculty id already exists");
+        }
+        await faculty.save();
         res.send({ message: "Successfully created!" });
     } catch (error) {
         return res.status(500).send(error);
@@ -168,6 +243,32 @@ router.get("/api/students/:id", async (req, res) => {
 
 });
 
+router.post("/api/studentfind", async (req, res) => {
+    try {
+        const student = await Student.findOne({ email: req.body.email });
+        if (!student) {
+            return res.status(400).send("This student's profile does not exist");
+        }
+        res.json(student);
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+
+});
+
+router.post("/api/facultyfind", async (req, res) => {
+    try {
+        const faculty = await Faculty.findOne({ email: req.body.email });
+        if (!faculty) {
+            return res.status(400).send("This faculty's profile does not exist");
+        }
+        res.json(faculty);
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+
+});
+
 router.put("/api/students/:id", async (req, res) => {
     try {
 
@@ -177,6 +278,134 @@ router.put("/api/students/:id", async (req, res) => {
             req.body,
             { new: true, useFindAndModify: false });
         res.json(student);
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+});
+
+router.post("/api/advising", async (req, res) => {
+    const advising = new Advising({
+        student_id: req.body.student_id,
+        name: req.body.name,
+        courses: req.body.courses,
+        status: 'applied'
+    });
+    try {
+        await advising.save();
+
+        (async function () {
+            for (const item of (req.body.courses)) {
+                await Course.findOneAndUpdate(
+                    { id: item.id },
+                    { seat: item.seat - 1 },
+                    { new: true, useFindAndModify: false });
+
+            }
+        })();
+        res.send("Advising done successfully");
+
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+});
+
+router.post("/api/advising/:id", async (req, res) => {
+
+    try {
+        const adv = await Advising.findOne({ student_id: req.params.id });
+        if (!adv) {
+            const student = await Student.findOne({ id: req.params.id });
+            const advising = new Advising({
+                student_id: req.params.id,
+                name: student.name,
+                courses: [req.body.course],
+                status: 'applied'
+            });
+            await advising.save();
+            await Course.findOneAndUpdate(
+                { id: req.body.course.id },
+                { seat: req.body.course.seat - 1 },
+                { new: true, useFindAndModify: false });
+
+            return res.json(advising);
+        }
+
+        const advUpdated = await Advising.findByIdAndUpdate(
+            { _id: adv._id },
+            { courses: [...adv.courses, req.body.course] },
+            { new: true });
+
+        await Course.findOneAndUpdate(
+            { id: req.body.course.id },
+            { seat: req.body.course.seat - 1 },
+            { new: true, useFindAndModify: false });
+        res.json(advUpdated);
+
+
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+});
+
+router.post("/api/advising/approve/:id", async (req, res) => {
+
+    try {
+        const adv = await Advising.findOne({ student_id: req.params.id });
+        if (!adv) {
+            return res.status(400).send("This student has not done advising yet");
+        }
+
+        await Advising.findByIdAndUpdate(
+            { _id: adv._id },
+            { status: 'approved' },
+            { new: true });
+
+        res.send("Course deleted successfully");
+
+
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+});
+
+router.delete("/api/advising/:id/:course_id", async (req, res) => {
+
+    try {
+        const adv = await Advising.findOne({ student_id: req.params.id });
+        if (!adv) {
+            return res.status(400).send("This student has not done advising yet");
+        }
+        if (adv.courses.find(x => x.id === req.params.course_id) === undefined) {
+            return res.status(400).send("This course has not advised yet");
+        }
+
+        await Advising.findByIdAndUpdate(
+            { _id: adv._id },
+            { courses: adv.courses.filter(x => x.id !== req.params.course_id) },
+            { new: true, useFindAndModify: false });
+
+        const crs = await Course.findOne({ id: req.params.course_id });
+
+        await Course.findOneAndUpdate(
+            { id: req.params.course_id },
+            { seat: crs.seat + 1 },
+            { new: true, useFindAndModify: false });
+
+        res.send("Course deleted successfully");
+
+
+    } catch (error) {
+        return res.status(500).send(error);
+    }
+});
+
+router.get("/api/advising/:id", async (req, res) => {
+    try {
+        const adv = await Advising.findOne({ student_id: req.params.id });
+        if (!adv) {
+            return res.status(400).send("This student has not done advising yet");
+        }
+        res.json(adv);
     } catch (error) {
         return res.status(500).send(error);
     }

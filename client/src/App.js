@@ -14,6 +14,12 @@ import SetProfile from './components/SetProfile';
 import UserManagement from './components/UserManagement';
 import StudentDashboard from './components/StudentDashboard';
 import Result from './components/Result';
+import Advising from './components/Advising';
+import FacultyDashboard from './components/FacultyDashboard';
+import Approve from './components/Approve';
+import ViewResult from './components/ViewResult';
+import Password from './components/Password';
+import Logout from './components/Logout';
 
 
 function App(props) {
@@ -25,9 +31,15 @@ function App(props) {
         <PrivateRoute path="/user-management" component={UserManagement} isAuthenticated={props.isAuthenticated} />
         <Route path="/login" component={Login} exact />
         <Route path="/signup" component={Signup} exact />
-        <Route path="/set-profile" component={SetProfile} exact />
-        <Route path="/student-dashboard/:id" component={StudentDashboard} exact />
-        <Route path="/result/:id" component={Result} />
+        <PrivateRoute path="/set-profile" component={SetProfile} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/student-dashboard/:id" component={StudentDashboard} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/result/:id" component={Result} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/view/result/:id" component={ViewResult} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/advised-courses/:id" component={Advising} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/faculty-dashboard" component={FacultyDashboard} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/approve-advising/:id" component={Approve} isAuthenticated={props.isAuthenticated} />
+        <PrivateRoute path="/password" component={Password} isAuthenticated={props.isAuthenticated} />
+        <Route path="/logout" component={Logout} />
         <Route path="/" component={Login} exact />
       </div>
     </Router>

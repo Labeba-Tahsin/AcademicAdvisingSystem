@@ -48,3 +48,15 @@
 .signup-form .btn{
   margin-top: 10px;
 }
+
+.center-text{
+  margin: 0 auto;
+  text-align: center;
+}
+
+a.nav-link {
+  display: inline-block;
+  color: #fff !important;
+  padding: 4px 21px !important;
+  font-size: 21px;
+}
